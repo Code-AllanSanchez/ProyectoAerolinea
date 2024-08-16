@@ -1,5 +1,7 @@
 package hn.unah.aerolinea.proyecto.aerolinea.modelos;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -16,5 +18,8 @@ public class Ciudad {
     private int codigoCiudad;
 
     private String nombreCiudad;
+
+    
+    private List<Vuelo> vuelos;
 
 }
