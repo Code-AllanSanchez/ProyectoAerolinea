@@ -9,7 +9,9 @@ import org.springframework.stereotype.Service;
 import hn.unah.aerolinea.proyecto.aerolinea.modelos.Avion;
 import hn.unah.aerolinea.proyecto.aerolinea.modelos.Silla;
 import hn.unah.aerolinea.proyecto.aerolinea.modelos.Vuelo;
+import hn.unah.aerolinea.proyecto.aerolinea.modelos.mantenimientos;
 import hn.unah.aerolinea.proyecto.aerolinea.repositorios.AvionRepositorio;
+import hn.unah.aerolinea.proyecto.aerolinea.repositorios.MantenimientosRepositorio;
 import hn.unah.aerolinea.proyecto.aerolinea.repositorios.SillaRepositorio;
 
 @Service
@@ -20,6 +22,9 @@ public class AvionServicio {
 
     @Autowired
     private SillaRepositorio sillaRepositorio;
+
+    @Autowired
+    private MantenimientosRepositorio mantenimientosR;
 
     public Avion nuevoAvion(Avion nuevoAvion){
         if (this.avionRepositorio.existsById(nuevoAvion.getCodigoAvion())){
@@ -78,6 +83,11 @@ public class AvionServicio {
 
     public void asignarVuelo(){
         
+    }
+
+    public List<mantenimientos> obtenerMantenimientos(){
+        return this.mantenimientosR.findAll();
+
     }
 
 }

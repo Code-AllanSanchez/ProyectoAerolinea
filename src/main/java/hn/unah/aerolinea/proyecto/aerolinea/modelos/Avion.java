@@ -26,6 +26,9 @@ public class Avion {
 
     @OneToMany(mappedBy = "avion", cascade = CascadeType.ALL)
     private List<Vuelo> vuelos;
+
+    @OneToMany(mappedBy = "avion", cascade = CascadeType.ALL)
+    private List<mantenimientos> mantenimientos;
     
     
 }
