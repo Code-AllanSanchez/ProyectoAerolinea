@@ -15,8 +15,9 @@ public class Ciudad {
 
     @Id
     @Column(name = "codigociudad")
-    private int codigoCiudad;
+    private long codigoCiudad;
 
+    @Column(name = "nombreciudad")
     private String nombreCiudad;
 
     

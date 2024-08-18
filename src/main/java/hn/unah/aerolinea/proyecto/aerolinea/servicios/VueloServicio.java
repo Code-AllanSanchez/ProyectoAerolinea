@@ -14,7 +14,7 @@ public class VueloServicio {
     VueloRepositorio vueloRepositorio;
 
     public Vuelo crearVuelo(Vuelo nuevoVuelo){
-        if(this.vueloRepositorio.existsById(nuevoVuelo.getNumeroVuelo())){
+        if(this.vueloRepositorio.existsById(nuevoVuelo.getCodigoVuelo())){
             return null;
         }
 
@@ -36,6 +36,7 @@ public class VueloServicio {
             vueloActualizar.setFechaRegreso(vuelo.getFechaRegreso());
             vueloActualizar.setHoraLlegada(vuelo.getHoraLlegada());
             vueloActualizar.setHoraSalida(vuelo.getHoraSalida());
+            vueloActualizar.setEstadoVuelo(vuelo.getEstadoVuelo()); 
             this.vueloRepositorio.save(vueloActualizar);
             return vueloActualizar;
         }
