@@ -2,6 +2,7 @@ package hn.unah.aerolinea.proyecto.aerolinea.modelos;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,6 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -32,5 +34,8 @@ public class Silla {
     @ManyToOne
     @JoinColumn(name = "codigoavion", referencedColumnName = "codigoavion")
     private Avion avionSillas;
+
+    @OneToOne(mappedBy = "silla", cascade = CascadeType.ALL)
+    private Pasajeros pasajero;
 
 }

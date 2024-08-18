@@ -49,6 +49,5 @@ public class Vuelo {
     @JoinColumn(name = "codigoavion", referencedColumnName = "codigoavion")
     private Avion avion;
 
-
     
 }

@@ -87,7 +87,6 @@ public class AvionServicio {
 
     public List<mantenimientos> obtenerMantenimientos(){
         return this.mantenimientosR.findAll();
-
     }
 
 }

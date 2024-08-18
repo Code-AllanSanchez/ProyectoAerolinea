@@ -19,6 +19,7 @@ public class Avion {
     @Column(name = "codigoavion")
     private String codigoAvion;
 
+    @Column(name ="numeroasientos")
     private int numeroAsientos;
 
     @OneToMany(mappedBy = "avionSillas", cascade = CascadeType.ALL)
